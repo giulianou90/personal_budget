@@ -1,5 +1,5 @@
-const envelopes_db = [
-    {total_budget: "0"}
+let envelopes_db = [
+    {total_budget: 0}
 
 ];
 
@@ -13,11 +13,24 @@ const addToDatabase = (title,budget) => {
      title: title,
      budget: budget
     };
-    return envelopes_db.push(newEnvelope) 
+     envelopes_db.push(newEnvelope);
+     return newEnvelope;     
 };
+
+//get envelope by id
+const getFromDatabaseById = (id) => {
+    for (const element of envelopes_db) {
+        if (element.id === id) {
+          return element;
+        }
+      }
+      return null;
+  };
+
 
 module.exports = {
     envelopes_db,
-    addToDatabase
+    addToDatabase,
+    getFromDatabaseById
   };
 

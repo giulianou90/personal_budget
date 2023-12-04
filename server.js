@@ -11,7 +11,7 @@ app.listen(PORT, ()=>{console.log(`Listening on port ${PORT}`)});
 const { envelopes_db } = require('./envelopes_db');
 
 app.get('/', (req, res, next) => { 
-    res.send(envelopes_db.total_budget);
+    res.send(envelopes_db);
   });
 
 const envelopesRouter = require ('./envelopes_routes');
